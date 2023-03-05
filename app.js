@@ -6,20 +6,13 @@ const container = document.querySelector('[data-container]');
 const btnSearch = document.getElementById('btnSearch');
 const weatherList = document.getElementById("weatherList");
 
-
-check.addEventListener('change', toggleBackground=()=>{
-    if(check.checked){
-      console.log("checked")
-      container.style.background = '#fff'
-      container.style.color = '#1d1d1d'
-    } else{
-      
-      console.log("unchecked")
-      container.style.background = '#1d1d1d'
-      container.style.color = '#fff'
-    }
-})
-
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  container.style.background = '#1d1d1d'
+  container.style.color = '#fff'  
+} else {
+  container.style.background = '#fff'
+  container.style.color = '#1d1d1d'
+}
 
 const getWeatherData = (latitude, longitude) => {
   const url = `${apiUrl}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric&lang=pt_BR`;
