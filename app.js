@@ -87,5 +87,4 @@ const getWeatherDataByCity = () => {
       }, 5000)
     });
 };
-toggleBackground();
 btnSearch.addEventListener('click', getWeatherDataByCity);
