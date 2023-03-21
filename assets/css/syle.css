@@ -1,0 +1,107 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.navBar {
+    display: flex;
+    align-items: center;
+    background: #1d1d1d;
+    max-width: 100%;
+    flex-wrap: wrap;
+    min-height: 50px;
+    padding: 10px 30px;
+    justify-content: space-between;
+    color: #fff;
+    border-bottom: 2px solid blueviolet;
+}
+
+.container {
+    display: flex;
+    max-width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #222222;
+    transition: all 0.5s;
+    color: #fff;
+    gap: 20px;
+}
+
+#input_container {
+    max-width: 100vw;
+    display: flex;
+    gap: 10px;
+}
+
+#cityInput {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+
+}
+
+#btnSearch {
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+    background: blueviolet;
+    border: none;
+    text-transform: uppercase;
+    transition: all 1s;
+}
+
+#btnSearch:hover {
+    background: rgb(77, 16, 134);
+}
+
+#weatherList {
+    background: #3d3d3d;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px 1px rgba(0, 0, 1, 0.514);
+}
+
+#weatherList li {
+    font-size: 1.6em;
+    padding: 5px;
+    list-style: none;
+}
+
+div[data-response] ul>li>i {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 4.4em;
+    text-align: center;
+}
+
+@media (max-width:720px) {
+    .navBar {
+        width: 100vw;
+        position: fixed;
+        bottom: 0;
+        margin-top: 25px;
+        border-bottom: none;
+        padding:20px;
+        justify-content: center;
+    }
+    .span-menu {
+        display: flex;
+        padding:10px;
+        align-items: center;
+        justify-content: center;
+        padding:10px;
+        min-width: 100%;
+        min-height: 50px;
+        position: fixed;
+        top: 0;
+    }
+    #cityInput{
+        width: 50vw;
+    }
+}

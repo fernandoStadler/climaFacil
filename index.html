@@ -1,98 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="weather-icons-master/css/weather-icons.css">   -->
-    <link rel="stylesheet" href="https://bbcdn.githack.com/cdn-weather-icons/weather-icons/raw/master/css/weather-icons.css">  
-        <title>Clima Fácil</title>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/manifest.json">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="assets/css/syle.css">
+    <link rel="stylesheet"
+        href="https://bbcdn.githack.com/cdn-weather-icons/weather-icons/raw/master/css/weather-icons.css">
+    <title>Clima Fácil</title>
 </head>
+
 <body>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-    
-        .navBar{
-            display: flex;
-            align-items: center;
-            background: #1d1d1d;
-            max-width: 100%;
-            flex-wrap: wrap;
-            min-height: 50px;
-            padding: 10px 30px;
-            justify-content: space-between;
-            color: #fff;
-            border-bottom: 3px solid #8a2be2;
-        }
-
-        .container {
-            display: flex;
-            max-width: 100vw;
-            height: 100vh;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: #222222;
-            transition: all 0.5s;
-            color: #fff;
-            gap: 20px;
-        }
-        #input_container {
-            max-width: 100vw;
-            display: flex;
-            gap: 10px;
-        }
-
-        #cityInput{
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            outline: none;
-
-        }
-
-        #btnSearch {
-            padding: 10px;
-            border-radius: 4px;
-            color: #fff;
-            background: blueviolet;
-            border: none;
-            text-transform: uppercase;
-            transition: all 1s;
-        }
-
-        #btnSearch:hover{
-            background: rgb(77, 16, 134);
-        }
-
-        #weatherList li {
-            font-size: 1.2em;
-            padding: 5px;
-            list-style: none;
-        }
-
-        div[data-response] ul>li>i{
-            font-size: 4.4em;
-        }
-.toggle{
-    display: flex;
-    align-items: center;
-    gap:5px;
-}
-    </style>
     <nav class="navBar">
-        <span>
+        <span class="span-menu">
             <h1>Clima Fácil</h1>
         </span>
         <div id="input_container">
-            <input type="text" id="cityInput" 
-            placeholder="Digite o nome da cidade" />
+            <input type="text" id="cityInput" placeholder="Digite o nome da cidade" />
             <button id="btnSearch">Pesquisar</button>
-    
         </div>
     </nav>
     <div class="container" data-container>
@@ -102,9 +48,10 @@
             </ul>
         </div>
     </div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="climaticType.js"></script>
-    <script src="app.js"></script>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="assets/js/climaticType.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 
 </html>
