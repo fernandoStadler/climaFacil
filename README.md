@@ -8,8 +8,8 @@ Clima Fácil é um projeto que utiliza a API do OpenWeather para fornecer inform
 - **CSS:** Linguagem de estilo utilizada na estilização do site.
 - **Axios:** Biblioteca JavaScript utilizada para fazer requisições HTTP..
 - **Weather-icons**: Biblioteca de ícones utilizada para exibir ícones correspondentes ao clima atual.
-- **Bitbucket**: Plataforma utilizada para hospedar o repositório do dos arquivos da biblioteca Weather-icons .
-- **Githack**: Serviço utilizado para o CDN utilizado no projeto.
+- **Bitbucket**: Plataforma utilizada para hospedar o repositório dos arquivos da biblioteca Weather-icons .
+- **Githack**: Serviço utilizado para gerar o CDN utilizado no projeto.
 
 ## Screenshot
 
