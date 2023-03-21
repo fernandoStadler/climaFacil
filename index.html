@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clima Fácil</title>
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="weather-icons-master/css/weather-icons.css">   -->
+    <link rel="stylesheet" href="https://bbcdn.githack.com/cdn-weather-icons/weather-icons/raw/master/css/weather-icons.css">  
+        <title>Clima Fácil</title>
 </head>
-
 <body>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
-
+    
         .navBar{
             display: flex;
             align-items: center;
@@ -74,6 +75,9 @@
             list-style: none;
         }
 
+        div[data-response] ul>li>i{
+            font-size: 4.4em;
+        }
 .toggle{
     display: flex;
     align-items: center;
@@ -91,16 +95,15 @@
     
         </div>
     </nav>
-
     <div class="container" data-container>
-        <div>
+        <div data-response>
             <ul id="weatherList">
                 <!-- Carregado via js -->
             </ul>
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/67f504bb87.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="climaticType.js"></script>
     <script src="app.js"></script>
 </body>
 

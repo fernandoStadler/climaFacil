@@ -6,12 +6,11 @@ const container = document.querySelector('[data-container]');
 const btnSearch = document.getElementById('btnSearch');
 const weatherList = document.getElementById("weatherList");
 
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  container.style.background = '#1d1d1d'
-  container.style.color = '#fff'  
-} else {
-  container.style.background = '#fff'
-  container.style.color = '#1d1d1d'
+
+const getIcon = (callParam, getDescription, getIcon) =>{
+  if(callParam.weather[0].description == getDescription){
+    imagem = getIcon
+  }
 }
 
 const getWeatherData = (latitude, longitude) => {
@@ -20,18 +19,20 @@ const getWeatherData = (latitude, longitude) => {
     .get(url)
     .then((response) => {
       const weatherData = response.data;
-      console.log(weatherData);
+      let returnDescription = weatherData.weather[0].description
+      getIcon(weatherData,returnDescription,climaticType[`${returnDescription}`])
+      console.log(climaticType[`${returnDescription}`]); 
+
       const weatherIcon = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
-        console.log(weatherIcon);
       weatherList.innerHTML = `
-        
-        <li><img src="${weatherIcon}"></li>
-        <li><strong>Cidade:</strong> ${weatherData.name}</li>
+      <li><i class="wi ${imagem}" id="myIcon"></i></li>
+      <li><strong>Cidade:</strong> ${weatherData.name}</li>
         <li><strong>Temperatura:</strong>${weatherData.main.temp}°C</li>
         <li><strong>Umidade:</strong> ${weatherData.main.humidity}%</li>
         <li><strong>Descrição:</strong> ${weatherData.weather[0].description}</li>
       `;
     })
+
     .catch(() => {
       weatherList.innerHTML = `
           <li><strong>Cidade não localizada, por favor digite uma cidade valida!</li>
@@ -41,6 +42,15 @@ const getWeatherData = (latitude, longitude) => {
           `;
       }, 5000)
     });
+ 
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      container.style.background = '#1d1dd1d'
+      container.style.color = '#fff'      
+    } else {
+      container.style.background = '#fff'
+      container.style.color = '#1d1d1d'
+    }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -67,10 +77,10 @@ const getWeatherDataByCity = () => {
     .get(url)
     .then((response) => {
       const weatherData = response.data;
-      console.log(weatherData);
-      const weatherIcon = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
+      let returnDescription = weatherData.weather[0].description
+      getIcon(weatherData,returnDescription,climaticType[`${returnDescription}`])
       weatherList.innerHTML = `
-      <li class="icon"><img src="${weatherIcon}"></li>
+      <li><i class="wi ${imagem}" id="myIcon"></i></li>
       <li><strong>Cidade:</strong> ${weatherData.name}</li>
       <li><strong>Temperatura:</strong>${weatherData.main.temp}°C</li>
       <li><strong>Umidade:</strong> ${weatherData.main.humidity}%</li>
@@ -87,4 +97,5 @@ const getWeatherDataByCity = () => {
       }, 5000)
     });
 };
+
 btnSearch.addEventListener('click', getWeatherDataByCity);
